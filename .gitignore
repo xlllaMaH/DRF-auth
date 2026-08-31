@@ -1,0 +1,113 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django-specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Flask-specific (оставляем на случай общих библиотек)
+instance/
+.webassets-cache
+
+# Scrapy-specific
+.scrapy
+
+# Sphinx documentation
+docs/_dist/
+
+# PyBuilder
+.target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+# For a library or package, you might want to package these, but for an application,
+# you probably want to ignore them.
+.python-version
+
+# pipenv
+# If you don't want to work with pipenv, you can comment this out
+Pipfile.lock
+
+# Poetry
+# If you don't want to work with poetry, you can comment this out
+poetry.lock
+
+# Ruff
+.ruff_cache/
+
+# Ruff local configuration
+pyproject.toml
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
