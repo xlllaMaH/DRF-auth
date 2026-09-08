@@ -10,17 +10,6 @@ from users.models import CustomUserModel
 from .serializers import UserSerializer, LoginSerializer
 
 
-#api/user -> information: first_name | last_name | username
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = CustomUserModel.objects.all()
-    model = CustomUserModel
-    serializer_class = UserSerializer
-
-class LoginViewSet(viewsets.ModelViewSet):
-    queryset = CustomUserModel
-    model = CustomUserModel
-    serializer_class = LoginSerializer
-
 class LoginView(APIView):
     """Класс логина(сделать post(?))"""
 
@@ -45,13 +34,6 @@ class LoginView(APIView):
             })
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
-
-# Функция под вопросом, можно будет переделать 
-# class UserView(APIView):
-
-#     def get(self, request):
-#         serializer = UserSerializer(request.user)
-#         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class UserView(RetrieveAPIView):
     serializer_class = UserSerializer
