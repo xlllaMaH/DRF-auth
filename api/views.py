@@ -1,13 +1,13 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.generics import RetrieveAPIView
+# from rest_framework.permissions import IsAuthenticated
+# from rest_framework.generics import RetrieveAPIView, 
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from users.models import CustomUserModel
-from .serializers import UserSerializer, LoginSerializer
+from .serializers import UserSerializer, LoginSerializer, RegisterSerializer
 
 
 class LoginView(APIView):
@@ -35,9 +35,13 @@ class LoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
-class UserView(RetrieveAPIView):
+class UserView(generics.RetrieveAPIView):
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self):
         return self.request.user
+
+class RegisterView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer
+    permission_classes = [permissions.AllowAny] # По идее надо сделать чтобы все могли
