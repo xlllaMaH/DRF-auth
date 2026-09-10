@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'api.apps.ApiConfig',
     'users.apps.UsersConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
